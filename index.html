@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
+            --current-green: #1e7d32;
+--current-green-soft: rgba(30, 125, 50, 0.08);
             --primary-text: #2c3e50;
             --secondary-text: #546e7a;
             --accent: #003366;
@@ -30,10 +32,11 @@
         }
 
         header {
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, rgba(240,248,255,0.05), rgba(255,255,255,0));
+}
 
         h1 {
             font-family: 'Playfair Display', serif;
@@ -52,19 +55,41 @@
             margin-top: 20px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--accent);
-            margin-right: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        /* ===== Fancy Navbar Links ===== */
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--accent);
+    margin-right: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 4px;
+}
+
+/* sliding underline */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+/* hover animation */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* optional subtle hover opacity */
+nav a:hover {
+    opacity: 0.85;
+}
 
         section {
             margin-bottom: 50px;
@@ -86,25 +111,82 @@
             margin: 25px 0 15px 0;
         }
 
-        .item {
-            margin-bottom: 20px;
-        }
+        /* ===== Academic Timeline / Experience Styling ===== */
 
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 600;
-        }
+/* ===== Clean Academic Timeline ===== */
 
-        .date {
-            color: var(--secondary-text);
-            font-size: 0.9rem;
-        }
+.timeline {
+    position: relative;
+    padding-left: 28px;  /* keep space for dots */
+    margin-left: 8px;
+    border-left: none;   /* line removed */
+}
 
-        .description {
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
+.item {
+    position: relative;
+    margin-bottom: 35px;
+    padding: 18px 22px;
+    background: var(--section-bg);
+    border-radius: 6px;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* perfectly centered dot */
+.item::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.date {
+    color: var(--secondary-text);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--primary-text);
+}
+
+.current-note {
+    display: inline-block;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    color: var(--current-green);
+    background-color: var(--current-green-soft);
+    border: 1px solid var(--current-green);
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+/* ===== Project Links Clean Styling ===== */
+
+.description a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease, opacity 0.25s ease;
+}
+
+.description a:hover {
+    border-bottom: 1px solid var(--accent);
+    opacity: 0.8;
+}
 
         .course-list {
             display: flex;
@@ -112,21 +194,34 @@
             gap: 10px;
         }
 
-        .course-tag {
-            background: var(--section-bg);
-            border: 1px solid #ddd;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
+       .course-tag,
+.course-tag-current {
+    position: relative;
+    background: var(--section-bg);   /* neutral background */
+    border: 1px solid #ddd;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
+    cursor: default;
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
 
-        .course-tag-current {
-            background: var(--section-bg);
-            border: 2px solid #003366;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
+/* subtle hover lift */
+.course-tag:hover,
+.course-tag-current:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* ONLY current courses get green border */
+.course-tag-current {
+    border: 2px solid var(--current-green);
+    font-weight: 600;
+}
 
         footer {
             text-align: center;
@@ -136,9 +231,69 @@
             border-top: 1px solid #eee;
         }
 
+        .item-header {
+    display: flex;
+    justify-content: space-between; /* push title left, date right */
+    align-items: center;            /* vertically center them */
+    flex-wrap: wrap;                /* allow wrapping on small screens */
+}
         @media (max-width: 600px) {
             .item-header { flex-direction: column; }
         }
+
+        /* ===== Fancy Contact Section ===== */
+
+.contact-wrapper {
+    background: var(--section-bg);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.contact-item {
+    margin: 15px 0;
+    font-size: 1rem;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    position: relative;
+}
+
+.contact-item a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.contact-item a:hover::after {
+    width: 100%;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary-text);
+    margin-bottom: 4px;
+}
     </style>
 </head>
 <body>
@@ -181,60 +336,70 @@
 </section>
 
     <section id="cv">
-        <h2>Education and Experience</h2>
-        
+    <h2>Education and Experience</h2>
+
+    <div class="timeline">
+
         <div class="item">
             <div class="item-header">
-                <span>B.Sc. in Electrical Engineering</span>
+                <span class="item-title">B.Sc. in Electrical Engineering</span>
                 <span class="date">2023 — Present</span>
             </div>
-            <div class="description">Sharif University of Technology. Major GPA: 3.33/4.0. Current GPA: 3.23/4.0.</div>
+            <div class="description">
+                Sharif University of Technology.  
+                Major GPA: 3.33/4.0 · Current GPA: 3.23/4.0.
+            </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
     <section id="projects">
-        <h2>Academic Projects</h2>
+    <h2>Research and Academic Projects</h2>
 
-            <div class="item">
-    <div class="item-header">
-        <span>An Audio-Based Emotion Classification System Using Machine Learning Algorithms and Feature Engineering</span>
-        <span class="date">2026</span>
-    </div>
-    <div class="description">
-        <!-- <br><br> -->
-        <a href="documents/SignalsSystems_Project1404_2__1___Emotion_Detection_.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">
-            📄 Project Documentation
-        </a>
-        &nbsp;
-        <!-- <a href="https://github.com/AmirMJ-Z/ftp-project" target="_blank" style="color: var(--accent); font-weight: 600;">
-            💻 GitHub Repository
-        </a> -->
-    </div>
-</div>
-        
+    <div class="timeline">
+
         <div class="item">
-    <div class="item-header">
-        <span>Analysis of Phase-Amplitude Coupling during Olfactory Stimulation as a Biomarker for Alzheimer's Disease in EEG Signals</span>
-        <span class="date">2025</span>
+            <div class="item-header">
+                <span class="item-title">
+                    Audio-Based Emotion Classification using Feature Engineering & Machine Learning
+                </span>
+                <span class="date">2026</span>
+            </div>
+            <div class="description">
+                <a href="documents/SignalsSystems_Project1404_2__1___Emotion_Detection_.pdf" target="_blank">
+                    📄 Project Documentation
+                </a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">
+                    Phase-Amplitude Coupling in EEG during Olfactory Stimulation for Alzheimer's Biomarker Analysis
+                </span>
+                <span class="date">2025</span>
+            </div>
+            <div class="description">
+                <a href="documents/SS_Project_Phase1_Latex.pdf" target="_blank">
+                    📄 Phase I
+                </a>
+                &nbsp;|&nbsp;
+                <a href="documents/SignalsSystems_Project1404_2__1_-3.pdf" target="_blank">
+                    📄 Phase II
+                </a>
+            </div>
+        </div>
+
     </div>
-    <div class="description">
-        <!-- <br><br> -->
-        <a href="documents/SS_Project_Phase1_Latex.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">
-            📄 Project Documentation (Phase I) 
-        </a>
-        &nbsp;|&nbsp;
-        <a href="documents/SignalsSystems_Project1404_2__1_-3.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">
-            📄 Project Documentation (Phase II)
-        </a>
-        <!-- <a href="https://github.com/AmirMJ-Z/ftp-project" target="_blank" style="color: var(--accent); font-weight: 600;">
-            💻 GitHub Repository
-        </a> -->
-    </div>
-</div>
-    </section>
+</section>
 
     <section id="courses">
         <h2>Courses Taken</h2>
+
+        <div class="current-note">
+    Courses outlined in green are currently in progress.
+</div>
         
         <h3>Electrical Engineering</h3>
         <div class="course-list">
@@ -279,11 +444,33 @@
     </section>
 
     <section id="contact">
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:mirjalilyamirreza@gmail.com" style="color: var(--accent);">mirjalilyamirreza@gmail.com</a></p>
-        <p>LinkedIN: <a href="https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/" style="color: var(--accent);">LinkedIN Page</a></p>
-        <p>GitHub Page: <a href="https://github.com/AmirMJ-Z" style="color: var(--accent);">GitHub</a></p>
-    </section>
+    <h2>Contact</h2>
+
+    <div class="contact-wrapper">
+
+        <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:mirjalilyamirreza@gmail.com">
+                mirjalilyamirreza@gmail.com
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/" target="_blank">
+                linkedin.com/in/amirreza-mirjalily
+            </a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/AmirMJ-Z" target="_blank">
+                github.com/AmirMJ-Z
+            </a>
+        </div>
+
+    </div>
+</section>
 
     <footer>
         &copy; 2026 Amirreza Mirjalily - Sharif University of Technology, Electrical Engineering Dept.
