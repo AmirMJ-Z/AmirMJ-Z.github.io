@@ -1,493 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio | Amirreza Mirjalily</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --current-green: #1e7d32;
---current-green-soft: rgba(30, 125, 50, 0.08);
-            --primary-text: #2c3e50;
-            --secondary-text: #546e7a;
-            --accent: #003366;
-            --bg: #ffffff;
-            --section-bg: #f8f9fa;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--primary-text);
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        header {
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 25px;
-    margin-bottom: 50px;
-    background: linear-gradient(90deg, rgba(240,248,255,0.05), rgba(255,255,255,0));
-}
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin: 0;
-            color: var(--accent);
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--secondary-text);
-  
-        }
-
-        nav {
-            margin-top: 20px;
-        }
-
-        /* ===== Fancy Navbar Links ===== */
-
-nav a {
-    position: relative;
-    text-decoration: none;
-    color: var(--accent);
-    margin-right: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding-bottom: 4px;
-}
-
-/* sliding underline */
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--accent);
-    transition: width 0.3s ease;
-}
-
-/* hover animation */
-nav a:hover::after {
-    width: 100%;
-}
-
-/* optional subtle hover opacity */
-nav a:hover {
-    opacity: 0.85;
-}
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-
-        /* Added Subsection Styling */
-        h3 {
-            font-size: 1rem;
-            color: var(--secondary-text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 25px 0 15px 0;
-        }
-
-        /* ===== Academic Timeline / Experience Styling ===== */
-
-/* ===== Clean Academic Timeline ===== */
-
-.timeline {
-    position: relative;
-    padding-left: 28px;  /* keep space for dots */
-    margin-left: 8px;
-    border-left: none;   /* line removed */
-}
-
-.item {
-    position: relative;
-    margin-bottom: 35px;
-    padding: 18px 22px;
-    background: var(--section-bg);
-    border-radius: 6px;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* perfectly centered dot */
-.item::before {
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background: var(--accent);
-    border-radius: 50%;
-}
-
-.date {
-    color: var(--secondary-text);
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.description {
-    font-size: 0.95rem;
-    color: var(--primary-text);
-}
-
-.current-note {
-    display: inline-block;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    color: var(--current-green);
-    background-color: var(--current-green-soft);
-    border: 1px solid var(--current-green);
-    border-radius: 20px;
-    opacity: 0.8;
-}
-
-/* ===== Project Links Clean Styling ===== */
-
-.description a {
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.25s ease, opacity 0.25s ease;
-}
-
-.description a:hover {
-    border-bottom: 1px solid var(--accent);
-    opacity: 0.8;
-}
-
-        .course-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-       .course-tag,
-.course-tag-current {
-    position: relative;
-    background: var(--section-bg);   /* neutral background */
-    border: 1px solid #ddd;
-    padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 0.82rem;
-    letter-spacing: 0.3px;
-    cursor: default;
-    transition: 
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
-}
-
-/* subtle hover lift */
-.course-tag:hover,
-.course-tag-current:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-}
-
-/* ONLY current courses get green border */
-.course-tag-current {
-    border: 2px solid var(--current-green);
-    font-weight: 600;
-}
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            color: var(--secondary-text);
-            border-top: 1px solid #eee;
-        }
-
-        .item-header {
-    display: flex;
-    justify-content: space-between; /* push title left, date right */
-    align-items: center;            /* vertically center them */
-    flex-wrap: wrap;                /* allow wrapping on small screens */
-}
-        @media (max-width: 600px) {
-            .item-header { flex-direction: column; }
-        }
-
-        /* ===== Fancy Contact Section ===== */
-
-.contact-wrapper {
-    background: var(--section-bg);
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-wrapper:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-}
-
-.contact-item {
-    margin: 15px 0;
-    font-size: 1rem;
-}
-
-.contact-item a {
-    text-decoration: none;
-    color: var(--accent);
-    font-weight: 600;
-    position: relative;
-}
-
-.contact-item a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent);
-    transition: width 0.3s ease;
-}
-
-.contact-item a:hover::after {
-    width: 100%;
-}
-
-.contact-label {
-    display: block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--secondary-text);
-    margin-bottom: 4px;
-}
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080b12">
+<meta name="description" content="Amirreza Mirjalily — AI/ML Engineer and Software & Systems Engineer. RAG, optimization, and enterprise software.">
+<title>Amirreza Mirjalily | AI/ML & Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b12;--panel:rgba(17,24,38,.8);--line:rgba(148,163,184,.15);--text:#e8edf5;--muted:#9aa8bc;--accent:#5eead4;--violet:#8b9cff;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Inter,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 0%,rgba(94,234,212,.08),transparent 42%),radial-gradient(ellipse at 90% 25%,rgba(139,156,255,.08),transparent 40%),linear-gradient(#080b12,#0a0e17 55%,#080b12)}
+#network{position:fixed;inset:0;z-index:-1;opacity:.5;pointer-events:none}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.mono,.eyebrow,.meta,.tag{font-family:"DM Mono",monospace}
+.topbar{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(8,11,18,.78);border-bottom:1px solid var(--line)}
+nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:800;letter-spacing:-.05em}.brand b{color:var(--accent)}.navlinks{display:flex;align-items:center;gap:clamp(12px,2.5vw,28px)}.navlinks a{font-size:.82rem;color:var(--muted);transition:color .2s}.navlinks a:hover{color:var(--accent)}.navlinks .cta{border:1px solid rgba(94,234,212,.3);padding:7px 12px;border-radius:999px;color:var(--accent)}
+.hero{min-height:76vh;display:grid;align-items:center;padding:76px 0 60px}.hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:45px;align-items:center}
+.eyebrow{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}.status{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--panel);padding:6px 12px;border-radius:999px;color:var(--muted);font-size:.78rem;margin-bottom:22px}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px rgba(94,234,212,.1);animation:pulse 2.5s infinite}
+h1{margin:0;font-size:clamp(2.8rem,7vw,5.6rem);line-height:1.03;letter-spacing:-.075em;font-weight:800}h1 span{background:linear-gradient(110deg,#e8edf5 10%,var(--accent) 58%,var(--violet));color:transparent;background-clip:text}
+.role{font-size:clamp(1.05rem,2vw,1.35rem);color:var(--muted);margin:20px 0 12px}.copy{color:var(--muted);max-width:680px}.copy strong{color:var(--text)}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}.btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:11px 16px;font-size:.88rem;font-weight:600;transition:transform .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--accent);color:#06110f;border:1px solid var(--accent)}.secondary{border:1px solid var(--line);background:var(--panel)}
+.visual{min-height:320px;display:grid;place-items:center}.orbit{width:min(320px,100%);aspect-ratio:1;border:1px solid rgba(94,234,212,.2);border-radius:50%;position:relative;display:grid;place-items:center;animation:float 7s ease-in-out infinite}.orbit:before,.orbit:after{content:"";position:absolute;inset:11%;border:1px dashed rgba(139,156,255,.25);border-radius:50%;transform:rotate(-28deg)}.orbit:after{inset:24%;border-style:solid;border-color:rgba(94,234,212,.22);transform:rotate(32deg)}.core{width:115px;height:115px;display:grid;place-items:center;border-radius:26px;border:1px solid rgba(94,234,212,.3);background:linear-gradient(145deg,rgba(94,234,212,.14),rgba(139,156,255,.1));box-shadow:0 0 70px rgba(94,234,212,.13);font:1.3rem "DM Mono";color:var(--accent);transform:rotate(-8deg)}.chip{position:absolute;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:#0d121d;color:var(--muted);font:.72rem "DM Mono"}.a{top:12%;left:4%}.b{right:-1%;top:34%}.c{bottom:11%;left:8%}
+section{padding:70px 0}.heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;letter-spacing:-.055em;margin:7px 0 0}.note{max-width:450px;color:var(--muted);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.card{position:relative;overflow:hidden;padding:23px;border-radius:17px;background:linear-gradient(145deg,rgba(17,24,38,.88),rgba(12,17,27,.8));border:1px solid var(--line);transition:transform .25s,border-color .25s,box-shadow .25s}.card:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(94,234,212,.35),transparent)}.card:hover{transform:translateY(-4px);border-color:rgba(94,234,212,.28);box-shadow:0 18px 45px #0003}.card h3{font-size:1.05rem;line-height:1.4;margin:0 0 8px;letter-spacing:-.02em}.card p{font-size:.9rem;color:var(--muted);margin:10px 0}.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:#6e7d92;font-size:.73rem;margin-bottom:13px}.meta .kind{color:var(--accent)}.bullets{padding-left:18px;color:var(--muted);font-size:.89rem;margin:12px 0}.bullets li{margin:6px 0}.bullets li::marker{color:var(--accent)}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.tag{font-size:.68rem;color:#b8c5d8;background:#94a3b80c;border:1px solid #94a3b81f;border-radius:7px;padding:4px 8px}.featured{border-color:rgba(94,234,212,.22)}.label{display:block;color:var(--accent);font:.7rem "DM Mono";letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}.muted{color:#6e7d92!important;font-size:.8rem!important}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.skills h3{color:var(--accent);font:.78rem "DM Mono";text-transform:uppercase;letter-spacing:.08em}.skills p{font-size:.88rem;color:var(--muted);line-height:2}
+.edu{display:flex;gap:16px}.mark{width:44px;height:44px;flex:none;display:grid;place-items:center;border:1px solid rgba(94,234,212,.3);border-radius:12px;background:rgba(94,234,212,.08);font:.8rem "DM Mono";color:var(--accent)}
+.contact{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:clamp(24px,5vw,42px);border:1px solid rgba(94,234,212,.28);border-radius:21px;background:radial-gradient(ellipse at 0 0,rgba(94,234,212,.1),transparent 60%),var(--panel)}.contact p{max-width:540px;color:var(--muted)}.links{display:flex;flex-wrap:wrap;gap:9px}.links a{padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:.82rem;transition:color .2s,border-color .2s}.links a:hover{color:var(--accent);border-color:var(--accent)}
+footer{padding:26px 0 34px;border-top:1px solid var(--line);font:.73rem "DM Mono";color:#6e7d92}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.reveal{opacity:0;transform:translateY(17px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px #5eead410}50%{box-shadow:0 0 0 8px #5eead405}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px) rotate(2deg)}}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:28px}.visual{min-height:270px}.orbit{width:270px}.grid,.skills{grid-template-columns:1fr}.heading{display:block}.note{margin-top:12px}.contact{align-items:flex-start;flex-direction:column}}
+@media(max-width:600px){.wrap{width:calc(100% - 28px)}.navlinks a:not(.cta){display:none}.hero{min-height:auto;padding:65px 0 40px}section{padding:52px 0}h1{font-size:clamp(2.6rem,13vw,4rem)}.card{padding:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}#network{display:none}}
+</style>
 </head>
 <body>
+<canvas id="network" aria-hidden="true"></canvas>
+<div class="topbar"><div class="wrap"><nav aria-label="Main navigation">
+<a class="brand" href="#top">AM<b>.</b></a>
+<div class="navlinks"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#skills">Skills</a><a class="cta" href="#contact">Get in touch ↗</a></div>
+</nav></div></div>
+<main id="top">
+<header class="hero wrap"><div class="hero-grid"><div>
+<div class="status"><span class="dot"></span> Engineering intelligent systems</div><div class="eyebrow">AI/ML · Software · Systems</div>
+<h1>Amirreza<br><span>Mirjalily.</span></h1><p class="role">AI/ML Engineer &amp; Software Systems Engineer</p>
+<p class="copy">I build <strong>intelligent, production-oriented software</strong> at the intersection of machine learning, information retrieval, mathematical optimization, and enterprise systems. From document-centric RAG pipelines to ERP-integrated applications, I enjoy turning complex technical problems into reliable systems.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn secondary" href="mailto:mirjalilyamirreza@gmail.com">Contact me ↗</a><a class="btn secondary" href="https://github.com/AmirMJ-Z" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+</div><div class="visual" aria-hidden="true"><div class="orbit"><span class="chip a">RAG / LLM</span><span class="chip b">OPTIMIZATION</span><span class="chip c">SYSTEMS</span><div class="core">AI<span style="color:var(--violet)">×</span>SE</div></div></div></div></header>
 
-<div class="container">
-    <header>
-        <h1>Amirreza Mirjalily</h1>
-        <div class="subtitle">Undergraduate Student in Electrical Engineering | Sharif University of Technology</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-            <a href="#projects">Projects</a>
-            <a href="#cv">Curriculum Vitae</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<section id="experience"><div class="wrap"><div class="heading reveal"><div><div class="eyebrow">Where I build</div><h2>Experience</h2></div><p class="note">Applied engineering across enterprise software and intelligent document systems.</p></div><div class="grid">
+<article class="card featured reveal"><div class="meta"><span class="kind">SYSTEM SOFTWARE ENGINEER</span><span>May 2026 — Present</span></div><h3>System Group</h3><p>Developing and extending enterprise ERP products and integrated business applications.</p><ul class="bullets"><li>Develop and extend product features and modules in the Rahkaran ERP ecosystem.</li><li>Led the design and most backend implementation of an AI-native B2B Customers Club integrated with Rahkaran.</li><li>Build service, database, and integration layers with a focus on data consistency and dependable workflows.</li><li>Integrate AI/ML capabilities and SystemOne models into business-facing software.</li></ul><div class="tags"><span class="tag">C# / .NET</span><span class="tag">ERP Integration</span><span class="tag">Python</span><span class="tag">SQL Server</span><span class="tag">Backend Systems</span></div></article>
+<article class="card reveal"><div class="meta"><span class="kind">AI/ML ENGINEER · INTERNSHIP</span><span>Mar 2026 — Jun 2026</span></div><h3>Saafaa</h3><p>Contributed to a complex automated legal-document question-answering system built around retrieval-augmented generation.</p><ul class="bullets"><li>Worked on document ingestion and parsing workflows using Docling.</li><li>Built retrieval workflows involving Qdrant, hybrid search, metadata filtering, and reranking.</li><li>Explored graph analysis and convex optimization within the document intelligence pipeline.</li><li>Integrated system components through a microservice architecture.</li></ul><div class="tags"><span class="tag">RAG</span><span class="tag">Docling</span><span class="tag">Qdrant</span><span class="tag">Hybrid Retrieval</span><span class="tag">Microservices</span></div></article>
+<article class="card reveal"><div class="meta"><span class="kind">ACADEMIC TUTOR</span><span>Jul 2025 — Oct 2025</span></div><h3>Institute of Artificial Intelligence and Social Advanced Technologies</h3><p>Tutored C++ Fundamentals, Data Structures, and Computer Networks Laboratory.</p><div class="tags"><span class="tag">C++</span><span class="tag">Data Structures</span><span class="tag">Networks</span><span class="tag">Teaching</span></div></article>
+<article class="card reveal"><div class="meta"><span class="kind">TEACHING ASSISTANT</span><span>Sharif University of Technology</span></div><h3>Object-Oriented Programming</h3><p>Supported course delivery and student learning in object-oriented programming.</p><div class="tags"><span class="tag">OOP</span><span class="tag">C++ / Java</span><span class="tag">Academic Support</span></div></article>
+</div></div></section>
 
-    <section id="about">
-    <h2>Research Statement</h2>
-    <p>
-        My research lies at the intersection of <strong>Mathematical Optimization</strong>, 
-        <strong>Machine Learning</strong>, and <strong>Signal Processing</strong>. 
-        I am particularly interested in how principled optimization techniques—both 
-        convex and non-convex—can improve learning stability, generalization, 
-        and computational efficiency in high-dimensional data settings.
-    </p>
-    <p>
-        I focus on <strong>image, audio, and speech signal processing</strong>, 
-        studying representation learning, feature extraction, and structured modeling 
-        techniques for real-world signals. My work explores how optimization-driven 
-        frameworks can enhance interpretability and robustness in machine learning systems, 
-        especially when dealing with noisy or limited data.
-    </p>
-    <p>
-        With a strong foundation in <strong>Linear Algebra, Probability, Statistics, 
-        and Signals & Systems</strong>, I aim to develop theoretically grounded 
-        and computationally efficient models that bridge modern machine learning 
-        with classical signal processing theory.
-    </p>
-</section>
+<section id="projects"><div class="wrap"><div class="heading reveal"><div><div class="eyebrow">Selected work</div><h2>Projects</h2></div><p class="note">Enterprise engineering, applied ML, signal processing, and systems programming.</p></div><div class="grid">
+<article class="card featured reveal"><span class="label">Enterprise · AI-enabled software</span><h3>AI-Native B2B Customers Club</h3><p>Designed and implemented the majority of the backend for a B2B customer engagement platform integrated with Rahkaran ERP, emphasizing data integrity and synchronization across business systems.</p><div class="tags"><span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">SQL Server</span><span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">React</span><span class="tag">ERP</span></div></article>
+<article class="card reveal"><span class="label">Systems programming</span><h3>Custom FTP Client, Server &amp; Protocol</h3><p>Built a custom FTP client-server application and protocol implementation, exploring network communication, socket programming, and persistent data management.</p><div class="tags"><span class="tag">Java</span><span class="tag">TCP Sockets</span><span class="tag">Networking</span><span class="tag">SQL</span></div></article>
+<article class="card reveal"><span class="label">Machine learning · Audio</span><h3>Speech Emotion Recognition</h3><p>Designed an audio emotion classification pipeline using signal feature engineering and ML, including MFCC and spectral representations, dimensionality reduction, and data augmentation.</p><div class="tags"><span class="tag">Python</span><span class="tag">MFCC</span><span class="tag">Feature Engineering</span><span class="tag">PCA</span><span class="tag">ML</span></div><p><a href="documents/SignalsSystems_Project1404_2__1___Emotion_Detection_.pdf" target="_blank" rel="noopener noreferrer">View documentation ↗</a></p></article>
+<article class="card reveal"><span class="label">Signal processing · EEG</span><h3>EEG Analysis for Alzheimer’s Biomarker Research</h3><p>Analyzed EEG signals for olfactory-stimulation-related biomarker exploration, including preprocessing and phase-amplitude coupling analysis.</p><div class="tags"><span class="tag">EEG</span><span class="tag">Signal Processing</span><span class="tag">Filtering</span><span class="tag">Feature Analysis</span></div><p><a href="documents/SS_Project_Phase1_Latex.pdf" target="_blank" rel="noopener noreferrer">Phase I ↗</a> · <a href="documents/SignalsSystems_Project1404_2__1_-3.pdf" target="_blank" rel="noopener noreferrer">Phase II ↗</a></p></article>
+<article class="card reveal"><span class="label">Automation · APIs</span><h3>Workflow Automation &amp; API Integrations</h3><p>Developed Python-based automation and API-connected utilities, including workflow automation and a Telegram bot integrating service data.</p><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">REST APIs</span><span class="tag">Automation</span></div></article>
+<article class="card reveal"><span class="label">Digital design</span><h3>Computer Architecture &amp; HDL Projects</h3><p>Implemented academic hardware projects involving MIPS, Intel 8085, PWM, pseudorandom number generation, and Verilog digital logic.</p><div class="tags"><span class="tag">Verilog</span><span class="tag">MIPS</span><span class="tag">Intel 8085</span><span class="tag">Digital Design</span></div></article>
+</div></div></section>
 
-    <section id="cv">
-    <h2>Education and Experience</h2>
+<section id="research"><div class="wrap"><div class="heading reveal"><div><div class="eyebrow">Research &amp; publications</div><h2>Research</h2></div><p class="note">Optimization-driven methods for intelligent systems, service composition, and computational efficiency.</p></div><div class="grid">
+<article class="card reveal"><div class="meta"><span class="kind">AITSDE</span><span>Sep 2026</span></div><h3>Service Composition for Complex Structures Based on Quality-of-Service Parameters Using Prim's and Kruskal's Algorithms</h3><p>Studies QoS-aware web service composition using adapted graph algorithms, geographical distance, and feasibility probabilities to improve selection and response-time performance.</p><p class="muted">Publication details · DOI not listed</p><div class="tags"><span class="tag">QoS Optimization</span><span class="tag">Graph Algorithms</span><span class="tag">Prim</span><span class="tag">Kruskal</span></div></article>
+<article class="card reveal"><div class="meta"><span class="kind">AITSDE</span><span>Feb 2026</span></div><h3>Economic Optimization of Cryptocurrency Mining Using Hybrid HHO-RL</h3><p>Explores reinforcement learning with Harris Hawks Optimization for automated hyperparameter tuning and optimization of mining throughput, resource allocation, and hash-power distribution.</p><p class="muted">Publication details · DOI not listed</p><div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">HHO</span><span class="tag">Optimization</span><span class="tag">Resource Allocation</span></div></article>
+</div></div></section>
 
-    <div class="timeline">
+<section id="education"><div class="wrap"><div class="heading reveal"><div><div class="eyebrow">Academic foundation</div><h2>Education</h2></div></div><article class="card edu reveal"><div class="mark">EE</div><div><div class="meta"><span class="kind">B.Sc. · ELECTRICAL ENGINEERING</span><span>2023 — Present</span></div><h3>Sharif University of Technology</h3><p>Current GPA: 16.8/20. Coursework includes Machine Learning, Data Structures &amp; Algorithms, Parallel Architectures &amp; Programming, Graph Signal Processing, OOP, Computer Networks, Computer Architecture, Microprocessor Systems, and Logic Design.</p><div class="tags"><span class="tag">Machine Learning</span><span class="tag">Optimization</span><span class="tag">Signal Processing</span><span class="tag">Computer Systems</span></div></div></article></div></section>
 
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">B.Sc. in Electrical Engineering</span>
-                <span class="date">2023 — Present</span>
-            </div>
-            <div class="description">
-                Sharif University of Technology.  
-                Major GPA: 3.33/4.0 · Current GPA: 3.23/4.0.
-            </div>
-        </div>
+<section id="skills"><div class="wrap"><div class="heading reveal"><div><div class="eyebrow">Technical toolkit</div><h2>Skills</h2></div><p class="note">Technologies across ML research, backend development, and systems engineering.</p></div><div class="skills">
+<article class="card reveal"><h3>AI / Machine Learning</h3><p>RAG · Document Intelligence · Retrieval &amp; Reranking · Embeddings · Hybrid Search · Docling · Qdrant · Graph Analysis · Convex Optimization · Signal Processing · PyTorch · TensorFlow · scikit-learn</p></article>
+<article class="card reveal"><h3>Software &amp; Systems</h3><p>Python · Rust · C# / .NET · Java · C / C++ · FastAPI · REST APIs · Microservices · TCP/IP · Socket Programming · Multithreading · Linux</p></article>
+<article class="card reveal"><h3>Data &amp; Engineering</h3><p>SQL Server · Redis · Docker · CI/CD · Git · React · TypeScript · NumPy · Pandas · MATLAB · LaTeX · Database Integration</p></article>
+</div></div></section>
 
-    </div>
-</section>
-
-    <section id="projects">
-    <h2>Research and Academic Projects</h2>
-
-    <div class="timeline">
-
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">
-                    Audio-Based Emotion Classification using Feature Engineering & Machine Learning
-                </span>
-                <span class="date">2026</span>
-            </div>
-            <div class="description">
-                <a href="documents/SignalsSystems_Project1404_2__1___Emotion_Detection_.pdf" target="_blank">
-                    📄 Project Documentation
-                </a>
-            </div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">
-                    Phase-Amplitude Coupling in EEG during Olfactory Stimulation for Alzheimer's Biomarker Analysis
-                </span>
-                <span class="date">2025</span>
-            </div>
-            <div class="description">
-                <a href="documents/SS_Project_Phase1_Latex.pdf" target="_blank">
-                    📄 Phase I
-                </a>
-                &nbsp;|&nbsp;
-                <a href="documents/SignalsSystems_Project1404_2__1_-3.pdf" target="_blank">
-                    📄 Phase II
-                </a>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-    <section id="courses">
-        <h2>Courses Taken</h2>
-
-        <div class="current-note">
-    Courses outlined in green are currently in progress.
-</div>
-        
-        <h3>Electrical Engineering</h3>
-        <div class="course-list">
-            <span class="course-tag-current">MACHINE LEARNING</span>
-            <span class="course-tag">ENGINEERING PROBABILITY & STATISTICS</span>
-            <span class="course-tag">LINEAR ALGEBRA</span>
-            <span class="course-tag">COMMUNICATION SYSTEMS ENGINEERING</span>
-            <span class="course-tag">SIGNALS & SYSTEMS</span>
-            <span class="course-tag-current">DATA TRANSMISSION NETWROKS</span>
-            <span class="course-tag">ENGINEERING MATHEMATICS</span>
-            <span class="course-tag">LINEAR CONTROL SYSTEMS</span>
-            <span class="course-tag">ELECTROMAGNETICS</span>
-            <span class="course-tag">CIRCUIT THEORY</span>
-            <span class="course-tag">COMPUTER ARCHITECTURE & MICROPROCESSORS</span>
-            <span class="course-tag">COMPUTER ARCHITECTURE & MICROPROCESSORS LAB</span>
-            <span class="course-tag">FUNDAMENTALS OF PROGRAMMING</span>
-            <span class="course-tag">OBJECT ORIENTED PROGRAMMING</span>
-            <span class="course-tag">ELECTRICAL CIRCUITS</span>
-            <span class="course-tag">LOGIC & DIGITAL SYSTEMS DESIGN</span>
-            <span class="course-tag">LOGIC & DIGITAL SYSTEMS DESIGN LAB</span>
-            <span class="course-tag">MICROELECTRONICS 1</span>
-            <span class="course-tag">MICROELECTRONICS LAB 1</span>
-            <span class="course-tag">ENGINEERING ENERGY TRANSFORMATION 1</span>
-            <span class="course-tag">ENGINEERING ENERGY TRANSFORMATION LAB 1</span>
-        </div>
-
-        <h3>General Sciences & Mathematics</h3>
-        <div class="course-list">
-            <span class="course-tag">GENERAL MATHEMATICS 1</span>
-            <span class="course-tag">GENERAL MATHEMATICS 2</span>
-            <span class="course-tag">DIFFERENTIAL EQUATIONS</span>
-            <span class="course-tag">PHYSICS 1</span>
-            <span class="course-tag">PHYSICS 2</span>
-            <span class="course-tag">PHYSICS LAB 1</span>
-            <span class="course-tag">PHYSICS LAB 2</span>
-        </div>
-
-        <h3>Other Courses</h3>
-        <div class="course-list">
-            <span class="course-tag">GENERAL ENGLISH</span>
-        </div>
-    </section>
-
-    <section id="contact">
-    <h2>Contact</h2>
-
-    <div class="contact-wrapper">
-
-        <div class="contact-item">
-            <span class="contact-label">Email</span>
-            <a href="mailto:mirjalilyamirreza@gmail.com">
-                mirjalilyamirreza@gmail.com
-            </a>
-        </div>
-
-        <div class="contact-item">
-            <span class="contact-label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/" target="_blank">
-                linkedin.com/in/amirreza-mirjalily
-            </a>
-        </div>
-
-        <div class="contact-item">
-            <span class="contact-label">GitHub</span>
-            <a href="https://github.com/AmirMJ-Z" target="_blank">
-                github.com/AmirMJ-Z
-            </a>
-        </div>
-
-    </div>
-</section>
-
-    <footer>
-        &copy; 2026 Amirreza Mirjalily - Sharif University of Technology, Electrical Engineering Dept.
-    </footer>
-</div>
-
+<section id="contact"><div class="wrap reveal"><div class="contact"><div><div class="eyebrow">Let’s connect</div><h2>Building something<br>intelligent?</h2><p>I’m interested in challenging problems across AI/ML, backend engineering, and intelligent systems. Reach out to discuss research, engineering opportunities, or collaboration.</p></div><div class="links"><a href="mailto:mirjalilyamirreza@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/AmirMJ-Z" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div></section>
+</main><footer><div class="wrap foot"><span>© 2026 Amirreza Mirjalily</span><span>Intelligent systems · HTML, CSS &amp; JavaScript</span></div></footer>
 <script>
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+(() => {
+ const canvas=document.getElementById('network'),ctx=canvas.getContext('2d');
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ let w,h,pts=[],raf;
+ const gap=115;
+ function resize(){const d=Math.min(devicePixelRatio||1,1.5);w=innerWidth;h=innerHeight;canvas.width=w*d;canvas.height=h*d;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(d,0,0,d,0,0);pts=[];for(let y=0;y<=Math.ceil(h/gap);y++)for(let x=0;x<=Math.ceil(w/gap);x++)pts.push({ox:x*gap,oy:y*gap,phase:Math.random()*6.28,x:x*gap,y:y*gap});}
+ let start=performance.now();
+ function draw(now){ctx.clearRect(0,0,w,h);const t=(now-start)*.00035,cols=Math.ceil(w/gap)+1;pts.forEach((p,i)=>{p.x=p.ox+Math.sin(t+p.phase)*7;p.y=p.oy+Math.cos(t*.8+p.phase)*7;ctx.strokeStyle='rgba(94,234,212,.075)';ctx.lineWidth=1;const r=pts[i+1],d=pts[i+cols];if(r&&i%cols<cols-1){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(r.x,r.y);ctx.stroke()}if(d){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(d.x,d.y);ctx.stroke()}if(i%3===0){ctx.fillStyle='rgba(139,156,255,.16)';ctx.beginPath();ctx.arc(p.x,p.y,1.2,0,6.28);ctx.fill()}});raf=requestAnimationFrame(draw)}
+ resize();raf=requestAnimationFrame(draw);addEventListener('resize',resize,{passive:true});document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else raf=requestAnimationFrame(draw)});
+})();
+const io='IntersectionObserver' in window?new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12}):null;
+document.querySelectorAll('.reveal').forEach(el=>io?io.observe(el):el.classList.add('visible'));
 </script>
-
-</body>
-</html>
+</body></html>
