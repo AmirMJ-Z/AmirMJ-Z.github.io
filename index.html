@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f8fa">
-  <title>Amirreza Mirjalily — AI/Software Engineer</title>
-  <meta name="description" content="Amirreza Mirjalily is a software engineer building reliable backend systems and applied AI, and the creator of SharifNet, an open-source Linux networking utility. Contributors welcome.">
+  <meta name="theme-color" content="#f6f7fb">
+  <meta name="description" content="Amirreza Mirjalily — Software Engineer working across backend systems, applied AI, and open source.">
   <meta name="author" content="Amirreza Mirjalily">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Amirreza Mirjalily — Software Engineer · Creator of SharifNet">
-  <meta property="og:description" content="Backend engineering, applied AI, and open source. Try SharifNet and help build its next platforms.">
+  <meta property="og:title" content="Amirreza Mirjalily — Software Engineer">
+  <meta property="og:description" content="Backend engineering, applied AI, systems programming, and open source.">
   <meta name="twitter:card" content="summary">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' rx='14' fill='%23171b24'/%3E%3Cpath d='M12 40L20 16L28 40L36 16L44 40' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 30H23.5' stroke='%238eafff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <title>Amirreza Mirjalily — Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='13' fill='%23151d2e'/%3E%3Cpath d='M10 34 18 14l8 20 8-20 4 10' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -23,371 +23,302 @@
     "jobTitle":"Software Engineer",
     "email":"mailto:mirjalilyamirreza@gmail.com",
     "alumniOf":"Sharif University of Technology",
-    "sameAs":["https://github.com/AmirMJ-Z","https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/"]
+    "sameAs":[
+      "https://github.com/AmirMJ-Z",
+      "https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/"
+    ]
   }
   </script>
   <style>
-    :root{
-      --bg:#f7f8fa;--surface:#fff;--surface-2:#f0f2f5;--ink:#171b24;--muted:#5d6779;--line:#e5e8ee;
-      --accent:#2457d6;--accent-dark:#1946b8;--accent-soft:#edf2ff;--dark:#0f1726;--dark-2:#182235;
-      --max:1160px;--radius:18px;--shadow:0 18px 55px rgba(20,32,55,.08);
+    :root {
+      color-scheme: light;
+      --bg:#f6f7fb; --surface:#fff; --ink:#172033; --muted:#657087;
+      --line:#e7eaf1; --blue:#315ee8; --blue-soft:#edf2ff;
+      --green:#15966b; --radius:20px; --shadow:0 16px 45px rgba(24,39,75,.07);
+      --max:1080px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
-    button{font:inherit;cursor:pointer}
-    :focus-visible{outline:3px solid #7da2ff;outline-offset:3px;border-radius:6px}
-    .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:50}
-    .skip:focus{left:12px}
-    .wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
-    .eyebrow,.meta,.tag,.tag-light{font-family:"DM Mono",monospace}
-
-    /* Nav */
-    .topbar{position:sticky;top:0;z-index:20;background:rgba(247,248,250,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,232,238,.9)}
-    nav{height:72px;display:flex;align-items:center;justify-content:center;gap:24px}
-    .navlinks{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px)}
-    .navlinks a{font-size:.83rem;font-weight:700;color:#586174;transition:color .2s}
-    .navlinks a:hover,.navlinks a.active{color:var(--accent)}
-    .navlinks .nav-cta{padding:10px 15px;border-radius:9px;background:var(--ink);color:#fff}
-    .navlinks .nav-cta:hover{color:#fff;background:var(--accent)}
-    .navlinks .nav-oss{display:inline-flex;align-items:center;gap:7px}
-    .navlinks .nav-oss:before{content:"";width:7px;height:7px;border-radius:50%;background:#1c9b6b}
-    .menu-toggle{display:none;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 12px;color:var(--ink);font-weight:700;font-size:.82rem}
-
-    /* Hero */
-    .hero{padding:88px 0 80px}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(290px,.7fr);gap:64px;align-items:center}
-    .eyebrow{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:500}
-    .availability{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid #dce4f4;border-radius:999px;background:#fff;color:#596477;font:.74rem "DM Mono",monospace;margin-bottom:24px}
-    .availability i{width:7px;height:7px;background:#1c9b6b;border-radius:50%;box-shadow:0 0 0 4px #1c9b6b18}
-    h1{font-size:clamp(3.2rem,7.2vw,6rem);line-height:1;letter-spacing:-.085em;margin:0;font-weight:800}
-    h1 span{color:var(--accent)}
-    .role{font-size:clamp(1.05rem,2vw,1.3rem);font-weight:700;margin:22px 0 12px;color:#394357}
-    .intro{max-width:680px;color:var(--muted);margin:0}
-    .intro strong{color:var(--ink);font-weight:700}
-    .actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:10px;font-size:.84rem;font-weight:800;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}
+    button{font:inherit}
+    :focus-visible{outline:3px solid #91aaff;outline-offset:3px}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .mono,.eyebrow,.pill,.meta,.footer{font-family:"DM Mono",monospace}
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(246,247,251,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(231,234,241,.9)}
+    nav{min-height:68px;display:flex;align-items:center;justify-content:center}
+    .navlinks{display:flex;align-items:center;justify-content:center;gap:24px;width:100%}
+    .project-shortcuts{display:flex;align-items:center;justify-content:center;gap:8px;margin-left:8px}
+    .project-shortcut{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid var(--line);border-radius:9px;background:#fff;color:#344057;font-size:.68rem;font-weight:800;white-space:nowrap;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .project-shortcut:hover{transform:translateY(-1px);border-color:#c6d2f2;box-shadow:0 5px 14px rgba(24,39,75,.06)}
+    .project-shortcut i{width:7px;height:7px;border-radius:50%;background:#6654db;display:inline-block}
+    .project-shortcut.sharif i{background:#15966b}
+    .navlinks a{font-size:.78rem;font-weight:800;color:#647087;transition:color .2s}
+    .navlinks a:hover{color:var(--blue)}
+    .navlinks .contact-link{background:var(--ink);color:#fff;padding:9px 14px;border-radius:10px}
+    .menu{display:none;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-weight:800;color:var(--ink)}
+    main{padding-bottom:42px}
+    .hero{padding:76px 0 36px}
+    .hero-panel{position:relative;overflow:hidden;background:linear-gradient(125deg,#fff 0%,#f5f7ff 65%,#edf2ff 100%);border:1px solid #e2e8fa;border-radius:28px;padding:clamp(28px,5vw,58px);box-shadow:var(--shadow)}
+    .hero-panel:after{content:"";position:absolute;width:360px;height:360px;right:-140px;top:-190px;border-radius:50%;background:radial-gradient(circle,#7898ff35,transparent 68%);pointer-events:none}
+    .availability{display:inline-flex;align-items:center;gap:9px;border:1px solid #dce8e4;background:#fff;padding:6px 11px;border-radius:99px;color:#526477;font: .68rem "DM Mono",monospace;margin-bottom:24px}
+    .availability i{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 0 4px #15966b18}
+    .eyebrow{font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:500}
+    h1{font-size:clamp(3rem,8vw,6rem);line-height:.98;letter-spacing:-.09em;margin:0;font-weight:800}
+    h1 span{color:var(--blue)}
+    .role{font-size:clamp(1rem,2vw,1.22rem);font-weight:800;letter-spacing:-.03em;margin:22px 0 8px;color:#354159}
+    .intro{max-width:690px;color:var(--muted);margin:0;font-size:.94rem}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:10px;font-size:.78rem;font-weight:800;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}
     .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-dark)}
-    .btn-outline{border-color:#d3d9e4;background:#fff;color:#30394a}.btn-outline:hover{border-color:var(--accent)}
-    .hero-proof{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
-    .proof b{display:block;font-size:1.25rem;letter-spacing:-.04em;line-height:1.2}
-    .proof span{font:.7rem "DM Mono",monospace;color:#7b8496;text-transform:uppercase;letter-spacing:.06em}
-    .hero-aside{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:26px;box-shadow:var(--shadow)}
-    .aside-label{font:.7rem "DM Mono",monospace;text-transform:uppercase;letter-spacing:.1em;color:#7b8496}
-    .aside-title{font-size:1.12rem;font-weight:800;letter-spacing:-.04em;margin:12px 0 8px;line-height:1.35}
-    .aside-copy{font-size:.85rem;color:var(--muted);margin:0}
-    .focus-list{display:grid;gap:12px;margin-top:22px}
-    .focus-item{display:flex;align-items:center;gap:11px;font-size:.83rem;font-weight:700;color:#465064}
-    .focus-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;background:var(--accent-soft);color:var(--accent);font:.75rem "DM Mono",monospace}
-
-    section{padding:76px 0}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
-    h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;letter-spacing:-.07em;margin:8px 0 0;font-weight:800}
-    .section-note{max-width:460px;color:var(--muted);font-size:.9rem;margin:0}
-
-    /* SharifNet flagship */
-    .oss-band{background:var(--dark);color:#fff;padding:84px 0;position:relative;overflow:hidden}
-    .oss-band:before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;right:-220px;top:-300px;background:radial-gradient(circle,#2457d655,transparent 65%);pointer-events:none}
-    .oss-band .eyebrow{color:#9db7ff}
-    .oss-band h2{color:#fff}
-    .oss-band .section-note{color:#aab5c7}
-    .oss-main{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:48px;align-items:center;margin-top:8px;position:relative}
-    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-    .badge{font:.68rem "DM Mono",monospace;letter-spacing:.05em;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid #ffffff2b;color:#dbe5f7;background:#ffffff0a}
-    .badge.live{border-color:#2fbf8a55;color:#79e2b8;background:#2fbf8a12}
-    .oss-main h3{font-size:clamp(2.6rem,5.2vw,4.6rem);line-height:1;letter-spacing:-.08em;margin:0 0 16px}
-    .oss-main h3 span{color:#8eafff}
-    .oss-lead{color:#c8d2e2;font-size:1.02rem;max-width:600px;margin:0}
-    .feature-list{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
-    .feature-list li{display:flex;gap:10px;font-size:.86rem;color:#d3dbe9;font-weight:600;line-height:1.5}
-    .feature-list li:before{content:"✓";color:#79e2b8;font-weight:800}
-    .project-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-    .oss-band .btn-primary{background:#91adff;color:#0f1726}.oss-band .btn-primary:hover{background:#b0c4ff}
-    .oss-band .btn-outline{background:transparent;border-color:#ffffff38;color:#fff}.oss-band .btn-outline:hover{border-color:#fff}
-    .terminal{background:#0a101d;border:1px solid #ffffff1f;border-radius:15px;padding:0;box-shadow:0 24px 60px #0006;overflow:hidden}
-    .terminal-top{display:flex;align-items:center;gap:6px;border-bottom:1px solid #ffffff14;padding:13px 16px;background:#0e1626}
-    .terminal-top i{width:9px;height:9px;border-radius:50%;background:#46536b}
-    .terminal-top span{margin-left:auto;font:.66rem "DM Mono",monospace;color:#6f7f99}
-    .terminal pre{margin:0;padding:20px;white-space:pre-wrap;word-break:break-word;color:#c7d3e7;font:.78rem/2 "DM Mono",monospace}
-    .terminal .prompt{color:#8eafff}.terminal .comment{color:#6f7f99}
-    .copy-btn{display:block;width:100%;border:0;border-top:1px solid #ffffff14;background:#0e1626;color:#9db7ff;padding:11px;font:.72rem "DM Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
-    .copy-btn:hover{background:#142038}
-
-    .contrib-head{margin:64px 0 22px;position:relative}
-    .contrib-head h3{font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.06em;margin:8px 0 8px;line-height:1.15}
-    .contrib-head p{color:#aab5c7;max-width:680px;margin:0;font-size:.92rem}
-    .contrib-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative}
-    .contrib-card{background:var(--dark-2);border:1px solid #ffffff17;border-radius:16px;padding:24px;transition:border-color .2s,transform .2s}
-    .contrib-card:hover{border-color:#8eafff66;transform:translateY(-3px)}
-    .contrib-card.hot{background:linear-gradient(160deg,#1d2f57,#182235);border-color:#8eafff55}
-    .contrib-card .tag{display:inline-block;margin-bottom:14px}
-    .contrib-card h4{font-size:1.05rem;margin:0 0 8px;letter-spacing:-.03em;line-height:1.35}
-    .contrib-card p{font-size:.84rem;color:#b3bed0;margin:0 0 12px}
-    .contrib-card ul{padding-left:18px;margin:0;color:#b3bed0;font-size:.82rem}
-    .contrib-card li{margin:4px 0}.contrib-card li::marker{color:#8eafff}
-    .tag{font-size:.66rem;color:#d8e1f2;background:#ffffff0c;border:1px solid #ffffff1b;border-radius:6px;padding:5px 8px}
-    .how{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:34px;position:relative}
-    .how div{border-top:2px solid #8eafff55;padding-top:14px}
-    .how b{display:block;font:.7rem "DM Mono",monospace;color:#8eafff;letter-spacing:.08em;margin-bottom:6px}
-    .how span{font-size:.84rem;color:#c2cddd;font-weight:600;line-height:1.5;display:block}
-    .how a{color:#9db7ff;text-decoration:underline;text-underline-offset:3px}
-    .oss-cta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:22px 26px;border:1px solid #ffffff1f;border-radius:16px;background:#ffffff08;position:relative}
-    .oss-cta p{margin:0;flex:1 1 320px;font-size:.92rem;color:#cbd5e5}
-    .oss-cta strong{color:#fff}
-
-    /* Cards */
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:transform .2s,border-color .2s,box-shadow .2s}
-    .card:hover{transform:translateY(-3px);border-color:#c8d4ee;box-shadow:var(--shadow)}
-    .card h3{font-size:1.04rem;line-height:1.4;margin:0 0 8px;letter-spacing:-.035em}
-    .card p{font-size:.86rem;color:var(--muted);margin:9px 0}
-    .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.68rem;color:#7b8496;margin-bottom:14px}
-    .meta .kind{color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
-    .bullets{padding-left:18px;color:var(--muted);font-size:.84rem;margin:12px 0}
-    .bullets li{margin:6px 0}.bullets li::marker{color:var(--accent)}
-    .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
-    .tag-light{font-size:.66rem;color:#4f5a6e;background:#f5f7fa;border:1px solid #e8ebf0;border-radius:6px;padding:5px 8px}
-    .text-link{font-size:.82rem;font-weight:800;color:var(--accent)}
-    .text-link:hover{text-decoration:underline;text-underline-offset:3px}
-    .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .skills h3{font:.72rem "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:0 0 12px}
-    .skills p{font-size:.83rem;line-height:2;color:var(--muted);margin:0}
-    .edu{display:flex;gap:17px;align-items:flex-start}
-    .edu-mark{width:46px;height:46px;flex:none;display:grid;place-items:center;border-radius:12px;background:var(--accent-soft);color:var(--accent);font:.8rem "DM Mono",monospace}
-
-    .contact{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:clamp(26px,5vw,48px);border:1px solid #dce4f4;border-radius:22px;background:linear-gradient(120deg,#fff,#f1f5ff)}
-    .contact p{max-width:560px;color:var(--muted);font-size:.9rem}
-    .contact-links{display:flex;flex-wrap:wrap;gap:9px}
-    .contact-links a{padding:10px 14px;border:1px solid #d3dae8;border-radius:9px;background:#fff;font-size:.8rem;font-weight:800;transition:border-color .2s}
-    .contact-links a:hover{border-color:var(--accent);color:var(--accent)}
-    footer{padding:27px 0 35px;border-top:1px solid var(--line);font:.7rem "DM Mono",monospace;color:#7b8496}
+    .primary{background:var(--blue);color:white}.primary:hover{background:#244bc6}
+    .secondary{background:#fff;border-color:#dce1eb;color:#344057}.secondary:hover{border-color:#9eb2f5;color:var(--blue)}
+    .proof{display:flex;flex-wrap:wrap;gap:28px;margin-top:34px;padding-top:22px;border-top:1px solid #e2e7f1}
+    .proof b{display:block;font-size:1.08rem;letter-spacing:-.04em;line-height:1.3}
+    .proof span{font:.62rem "DM Mono",monospace;color:#7b8598;text-transform:uppercase;letter-spacing:.06em}
+    .section{padding:36px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:20px}
+    h2{font-size:clamp(1.65rem,4vw,2.25rem);line-height:1.12;letter-spacing:-.07em;margin:6px 0 0}
+    .section-note{max-width:430px;color:var(--muted);font-size:.82rem;margin:0}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .project{position:relative;overflow:hidden;min-height:205px;padding:24px;border-radius:19px;border:1px solid var(--line);background:#fff;box-shadow:0 8px 25px rgba(24,39,75,.035);transition:transform .2s,border-color .2s,box-shadow .2s}
+    .project:hover{transform:translateY(-4px);border-color:#cbd6f4;box-shadow:var(--shadow)}
+    .project:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-80px;top:-100px;background:var(--glow, #315ee812)}
+    .project.quera{--glow:#6d5df52b}
+    .project.sharif{--glow:#15966b22}
+    .project-top{display:flex;justify-content:space-between;align-items:center;gap:10px;position:relative}
+    .project-icon{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:var(--icon-bg,#edf2ff);color:var(--icon-color,var(--blue));font-weight:800;font-size:.82rem}
+    .project.quera .project-icon{--icon-bg:#f0edff;--icon-color:#6654db}
+    .project.sharif .project-icon{--icon-bg:#e8f7f1;--icon-color:#12865f}
+    .pill{font-size:.59rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:99px;border:1px solid var(--line);color:#69758b;background:#ffffffb8}
+    .project h3{font-size:1.22rem;letter-spacing:-.05em;margin:17px 0 5px;position:relative}
+    .project p{font-size:.8rem;color:var(--muted);max-width:490px;margin:0 0 18px;position:relative}
+    .project-links{display:flex;gap:15px;flex-wrap:wrap;position:relative}
+    .project-links a{font-size:.72rem;font-weight:800;color:var(--blue)}
+    .project-links a:hover{text-decoration:underline;text-underline-offset:3px}
+    .link-arrow{font-size:.8rem}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:21px}
+    .card h3{font-size:.98rem;line-height:1.4;margin:0 0 5px;letter-spacing:-.035em}
+    .card p{font-size:.8rem;color:var(--muted);margin:7px 0}
+    .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.61rem;color:#818ba0;margin-bottom:11px}
+    .meta .kind{color:var(--blue);text-transform:uppercase;letter-spacing:.05em}
+    .bullets{padding-left:17px;color:var(--muted);font-size:.77rem;margin:10px 0}
+    .bullets li{margin:4px 0}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+    .tag{font:.6rem "DM Mono",monospace;color:#566176;background:#f6f7fa;border:1px solid #e9ecf2;border-radius:6px;padding:4px 7px}
+    .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .skills .card h3{font:.66rem "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:10px}
+    .skills .card p{line-height:2;margin:0}
+    .education{display:flex;gap:15px;align-items:flex-start}
+    .edu-icon{width:42px;height:42px;flex:none;border-radius:11px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue);font:.7rem "DM Mono",monospace}
+    .contact{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:27px;border-radius:19px;background:#172033;color:#fff}
+    .contact h2{margin-top:7px}
+    .contact p{max-width:560px;color:#b9c3d4;font-size:.82rem;margin:9px 0 0}
+    .contact .eyebrow{color:#9db4ff}
+    .contact-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+    .contact-links a{padding:9px 12px;border:1px solid #ffffff30;border-radius:9px;font-size:.72rem;font-weight:800;color:#fff;white-space:nowrap;transition:background .2s}
+    .contact-links a:hover{background:#ffffff16}
+    footer{padding:22px 0 28px;border-top:1px solid var(--line);color:#8791a4;font:.62rem "DM Mono",monospace}
     .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .foot a:hover{color:var(--accent)}
-
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s,transform .55s}
-    .reveal.visible{opacity:1;transform:none}
-
-    @media(max-width:960px){.contrib-grid{grid-template-columns:1fr}.how{grid-template-columns:1fr 1fr}}
-    @media(max-width:850px){
-      .hero-grid,.oss-main{grid-template-columns:1fr;gap:34px}
-      .hero-aside{max-width:560px}.skills{grid-template-columns:1fr 1fr}
-      .section-head{display:block}.section-note{margin-top:12px}
-      .contact{align-items:flex-start;flex-direction:column}
+    .foot a:hover{color:var(--blue)}
+    @media(max-width:780px){
+      .section-head{display:block}.section-note{margin-top:9px}
+      .skills{grid-template-columns:1fr 1fr}
+      .contact{align-items:flex-start;flex-direction:column}.contact-links{justify-content:flex-start}
     }
-    @media(max-width:640px){
-      .wrap{width:calc(100% - 32px)}nav{height:64px}.menu-toggle{display:block}
-      .navlinks{display:none;position:absolute;left:16px;right:16px;top:64px;padding:15px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);align-items:stretch;flex-direction:column;gap:0}
-      .navlinks.open{display:flex}.navlinks a{padding:10px 7px}.navlinks .nav-cta{text-align:center;margin-top:7px}
-      .hero{padding:60px 0 50px}h1{font-size:clamp(3rem,15vw,4.6rem)}
-      section{padding:56px 0}.oss-band{padding:60px 0}
-      .grid,.skills,.feature-list,.how{grid-template-columns:1fr}.card{padding:20px}
-      .contact-links{width:100%}.contact-links a{flex:1;text-align:center}
+    @media(max-width:760px){
+      .wrap{width:calc(100% - 28px)}
+      nav{min-height:62px;position:relative;justify-content:center}
+      .menu{display:block;margin:0 auto}
+      .navlinks{display:none;position:absolute;top:62px;left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}
+      .navlinks.open{display:flex}.navlinks>a{padding:10px 7px}.navlinks .contact-link{text-align:center;margin-top:5px}
+      .project-shortcuts{margin:8px 0 10px;width:100%;gap:7px}
+      .project-shortcut{flex:1;justify-content:center;padding:7px 8px;font-size:.65rem}
+      .hero{padding:34px 0 20px}.hero-panel{border-radius:20px;padding:26px 21px}
+      h1{font-size:clamp(3rem,16vw,4.5rem)}
+      .proof{gap:18px}.section{padding:27px 0}
+      .project-grid,.grid,.skills{grid-template-columns:1fr}
+      .project{min-height:0;padding:21px}
+      .contact{padding:23px}.contact-links a{flex:1;text-align:center}
     }
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
   <div class="topbar">
     <div class="wrap">
       <nav aria-label="Main navigation">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+        <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks">Menu</button>
         <div class="navlinks" id="navlinks">
-          <a class="nav-oss" href="#sharifnet">SharifNet</a>
-          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
           <a href="#research">Research</a>
           <a href="#skills">Skills</a>
-          <a class="nav-cta" href="#contact">Get in touch ↗</a>
+          <a href="#education">Education</a>
+          <a class="contact-link" href="#contact">Get in touch ↗</a>
         </div>
       </nav>
+      <div class="project-shortcuts" aria-label="Featured project shortcuts">
+        <a class="project-shortcut quera" href="queramcp.html"><i></i> QueraMCP <span>↗</span></a>
+        <a class="project-shortcut sharif" href="sharifnet.html"><i></i> SharifNet <span>↗</span></a>
+      </div>
     </div>
   </div>
 
-  <main id="main">
-    <header class="hero wrap" id="top">
-      <div class="hero-grid">
-        <div>
-          <div class="availability"><i></i> Open to collaboration &amp; contributors</div>
-          <div class="eyebrow">Software Engineering · Applied AI · Open Source</div>
-          <h1>Amirreza<br><span>Mirjalily.</span></h1>
-          <p class="role">Software engineer building dependable systems and intelligent products.</p>
-          <p class="intro">I work across <strong>backend engineering, applied machine learning, and systems programming</strong>, turning complex requirements into software people can rely on. I also maintain <strong>SharifNet</strong>, an open-source Linux networking tool — and I'm inviting developers to use it and help take it further.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#sharifnet">Explore SharifNet ↓</a>
-            <a class="btn btn-outline" href="#experience">View my work</a>
-            <a class="btn btn-outline" href="mailto:mirjalilyamirreza@gmail.com">Contact me ↗</a>
-          </div>
-          <div class="hero-proof">
-            <div class="proof"><b>B2B ERP</b><span>Production systems</span></div>
-            <div class="proof"><b>RAG</b><span>Document intelligence</span></div>
-            <div class="proof"><b>2</b><span>Research papers</span></div>
-            <div class="proof"><b>Open source</b><span>SharifNet</span></div>
-          </div>
+  <main id="top">
+    <header class="hero wrap">
+      <div class="hero-panel">
+        <div class="availability"><i></i> Open to opportunities &amp; collaboration</div>
+        <div class="eyebrow">Software Engineering · Applied AI · Systems</div>
+        <h1>Amirreza<br><span>Mirjalily.</span></h1>
+        <p class="role">Software engineer building dependable systems and intelligent products.</p>
+        <p class="intro">I work across <strong>backend engineering, applied machine learning, and systems programming</strong> — turning complex requirements into software people can rely on. I enjoy solving practical engineering problems, exploring new technologies, and building useful tools in the open.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore selected work ↓</a>
+          <a class="btn secondary" href="mailto:mirjalilyamirreza@gmail.com">Contact me ↗</a>
+          <a class="btn secondary" href="https://drive.google.com/" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
         </div>
-        <aside class="hero-aside" aria-label="Areas of focus">
-          <div class="aside-label">Areas of focus</div>
-          <div class="aside-title">Engineering from idea to production.</div>
-          <p class="aside-copy">Software design, rigorous problem-solving, and a habit of building in the open.</p>
-          <div class="focus-list">
-            <div class="focus-item"><span class="focus-icon">01</span> Backend &amp; distributed systems</div>
-            <div class="focus-item"><span class="focus-icon">02</span> AI / ML &amp; information retrieval</div>
-            <div class="focus-item"><span class="focus-icon">03</span> Linux &amp; open-source software</div>
-            <div class="focus-item"><span class="focus-icon">04</span> Optimization &amp; applied research</div>
-          </div>
-        </aside>
+        <div class="proof">
+          <div><b>B2B ERP</b><span>Production systems</span></div>
+          <div><b>RAG</b><span>Document intelligence</span></div>
+          <div><b>2</b><span>Research papers</span></div>
+          <div><b>Open source</b><span>Independent projects</span></div>
+        </div>
       </div>
     </header>
 
-    <!-- FLAGSHIP OPEN SOURCE -->
-    <div class="oss-band" id="sharifnet">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div><div class="eyebrow">Flagship open-source project</div><h2>Use it. Improve it.<br>Build the next platform.</h2></div>
-          <p class="section-note">Good software gets better when people can run it, inspect it, and build on top of it. SharifNet is built that way, and contributions are genuinely welcome.</p>
-        </div>
-
-        <div class="oss-main reveal">
-          <div>
-            <div class="badges">
-              <span class="badge live">● Actively maintained</span>
-              <span class="badge">Open source</span>
-              <span class="badge">Contributors welcome</span>
-            </div>
-            <h3>Sharif<span>Net</span></h3>
-            <p class="oss-lead">A lightweight Linux networking utility that makes connecting, disconnecting, and managing network access simple. Everyday connection controls become one clean command-line workflow, with configurable credentials and automatic reconnection.</p>
-            <ul class="feature-list">
-              <li>One-command connect and disconnect</li>
-              <li>Configurable credentials</li>
-              <li>Automatic reconnection</li>
-              <li>Runs as a managed systemd service</li>
-              <li>Packaged for Debian / APT installs</li>
-              <li>Python codebase, easy to read and extend</li>
-            </ul>
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://github.com/AmirMJ-Z/SharifNet/releases" target="_blank" rel="noopener noreferrer">Download latest release ↗</a>
-              <a class="btn btn-outline" href="https://github.com/AmirMJ-Z/SharifNet" target="_blank" rel="noopener noreferrer">★ Star &amp; view on GitHub ↗</a>
-            </div>
+    <section class="section wrap" id="projects">
+      <div class="section-head">
+        <div><div class="eyebrow">Selected work</div><h2>Projects &amp; open source</h2></div>
+        <p class="section-note">A couple of projects I’m actively building. Explore each project page for details, documentation, installation instructions, and ways to contribute.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project quera">
+          <div class="project-top"><div class="project-icon">QM</div><span class="pill">MCP · Python · Open source</span></div>
+          <h3>QueraMCP</h3>
+          <p>An MCP server and client for bringing Quera programming-practice workflows into AI assistants and compatible LLM tools.</p>
+          <div class="project-links">
+            <a href="queramcp.html">Project overview <span class="link-arrow">↗</span></a>
+            <a href="https://github.com/AmirMJ-Z/QueraMCP" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
           </div>
-          <div class="terminal" aria-label="Example SharifNet terminal commands">
-            <div class="terminal-top"><i></i><i></i><i></i><span>bash — sharifnet</span></div>
-            <pre id="install-code"><span class="comment"># Install the Debian package</span>
-<span class="prompt">$</span> sudo apt install ./sharifnet_*.deb
-
-<span class="comment"># Check connection status</span>
-<span class="prompt">$</span> sharifnet status
-
-<span class="comment"># Connect to the network</span>
-<span class="prompt">$</span> sharifnet connect
-
-<span class="comment"># Configure automatic reconnect</span>
-<span class="prompt">$</span> sharifnet autoreconnect on</pre>
-            <button class="copy-btn" type="button" id="copy-btn">Copy commands</button>
+        </article>
+        <article class="project sharif">
+          <div class="project-top"><div class="project-icon">SN</div><span class="pill">Linux · Networking · Open source</span></div>
+          <h3>SharifNet</h3>
+          <p>A lightweight Linux networking utility designed to make everyday connection management simple, reliable, and accessible.</p>
+          <div class="project-links">
+            <a href="sharifnet.html">Project overview <span class="link-arrow">↗</span></a>
+            <a href="https://github.com/AmirMJ-Z/SharifNet" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+            <a href="https://github.com/AmirMJ-Z/SharifNet/releases" target="_blank" rel="noopener noreferrer">Latest release ↗</a>
           </div>
-        </div>
-
-        <div class="contrib-head reveal">
-          <div class="eyebrow">Open for contribution</div>
-          <h3>Where you can make a real impact</h3>
-          <p>SharifNet is ready for the next stage of growth. If any of these areas match your skills, jump in — open an issue to discuss an idea, or send a pull request.</p>
-        </div>
-        <div class="contrib-grid">
-          <article class="contrib-card hot reveal">
-            <span class="tag">Wanted · Mobile</span>
-            <h4>Mobile app development</h4>
-            <p>Bring SharifNet to phones and tablets. Android and iOS clients would put connection control in everyone's pocket.</p>
-            <ul><li>Android (Kotlin / Flutter / React Native)</li><li>iOS (Swift)</li><li>Shared design for status &amp; auto-reconnect</li></ul>
-          </article>
-          <article class="contrib-card reveal">
-            <span class="tag">Platforms</span>
-            <h4>More platforms &amp; packaging</h4>
-            <p>Extend reach beyond Debian-based systems and make installation effortless.</p>
-            <ul><li>Other Linux distros (RPM, AUR, Nix)</li><li>macOS and Windows exploration</li><li>Desktop tray / GUI front-end</li></ul>
-          </article>
-          <article class="contrib-card reveal">
-            <span class="tag">Quality</span>
-            <h4>Reliability, tests &amp; docs</h4>
-            <p>Strengthen the foundations so others can adopt and extend the project with confidence.</p>
-            <ul><li>Automated tests &amp; CI</li><li>Documentation and usage guides</li><li>Bug reports from real-world setups</li></ul>
-          </article>
-        </div>
-
-        <div class="how reveal">
-          <div><b>01 — TRY</b><span>Download the <a href="https://github.com/AmirMJ-Z/SharifNet/releases" target="_blank" rel="noopener noreferrer">latest release</a> and run it on your Linux machine.</span></div>
-          <div><b>02 — REPORT</b><span>Found a bug or a rough edge? <a href="https://github.com/AmirMJ-Z/SharifNet/issues" target="_blank" rel="noopener noreferrer">Open an issue</a> with your setup details.</span></div>
-          <div><b>03 — PROPOSE</b><span>Have an idea or want to own a feature? Start a discussion in an issue first.</span></div>
-          <div><b>04 — CONTRIBUTE</b><span>Fork the repo and send a <a href="https://github.com/AmirMJ-Z/SharifNet/pulls" target="_blank" rel="noopener noreferrer">pull request</a>.</span></div>
-        </div>
-
-        <div class="oss-cta reveal">
-          <p><strong>Want to build the mobile version, or help in any other way?</strong> Open an issue on GitHub or email me directly. I'm happy to collaborate and review contributions.</p>
-          <a class="btn btn-primary" href="https://github.com/AmirMJ-Z/SharifNet/issues" target="_blank" rel="noopener noreferrer">Join the project ↗</a>
-          <a class="btn btn-outline" href="mailto:mirjalilyamirreza@gmail.com?subject=SharifNet%20contribution">Email me</a>
-        </div>
-      </div>
-    </div>
-
-    <section id="experience">
-      <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">Professional experience</div><h2>Experience</h2></div><p class="section-note">Applied engineering across enterprise software, backend systems, and intelligent document workflows.</p></div>
-        <div class="grid">
-          <article class="card reveal"><div class="meta"><span class="kind">System Software Engineer</span><span>May 2026 — Present</span></div><h3>System Group</h3><p>Developing and extending enterprise ERP products and integrated business applications.</p><ul class="bullets"><li>Develop and extend features and modules in the Rahkaran ERP ecosystem.</li><li>Led the design and most backend implementation of a B2B Customers Club integrated with Rahkaran.</li><li>Build service, database, and integration layers focused on data consistency and dependable workflows.</li><li>Integrate AI/ML capabilities into business-facing software.</li></ul><div class="tags"><span class="tag-light">C# / .NET</span><span class="tag-light">ERP Integration</span><span class="tag-light">Python</span><span class="tag-light">SQL Server</span></div></article>
-          <article class="card reveal"><div class="meta"><span class="kind">AI/ML Engineer · Internship</span><span>Mar 2026 — Jun 2026</span></div><h3>Saafaa</h3><p>Contributed to an automated legal-document question-answering system built on retrieval-augmented generation.</p><ul class="bullets"><li>Worked on document ingestion and parsing workflows using Docling.</li><li>Built retrieval workflows with Qdrant, hybrid search, metadata filtering, and reranking.</li><li>Explored graph analysis and convex optimization within the document intelligence pipeline.</li><li>Integrated components through a microservice architecture.</li></ul><div class="tags"><span class="tag-light">RAG</span><span class="tag-light">Docling</span><span class="tag-light">Qdrant</span><span class="tag-light">Microservices</span></div></article>
-          <article class="card reveal"><div class="meta"><span class="kind">Academic Tutor</span><span>Jul 2025 — Oct 2025</span></div><h3>Institute of Artificial Intelligence and Social Advanced Technologies</h3><p>Tutored C++ Fundamentals, Data Structures, and the Computer Networks Laboratory.</p><div class="tags"><span class="tag-light">C++</span><span class="tag-light">Data Structures</span><span class="tag-light">Networks</span><span class="tag-light">Teaching</span></div></article>
-          <article class="card reveal"><div class="meta"><span class="kind">Teaching Assistant</span><span>Sharif University of Technology</span></div><h3>Object-Oriented Programming</h3><p>Supported course delivery and student learning in object-oriented programming.</p><div class="tags"><span class="tag-light">OOP</span><span class="tag-light">C++ / Java</span><span class="tag-light">Academic Support</span></div></article>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">Selected work</div><h2>Projects</h2></div><p class="section-note">Engineering work spanning enterprise applications, machine learning, signal processing, and systems programming.</p></div>
-        <div class="grid">
-          <article class="card reveal"><div class="meta"><span class="kind">Enterprise · AI-enabled software</span></div><h3>AI-Native B2B Customers Club</h3><p>Designed and implemented the majority of the backend for a B2B customer engagement platform integrated with Rahkaran ERP, emphasizing data integrity and synchronization across business systems.</p><div class="tags"><span class="tag-light">FastAPI</span><span class="tag-light">Python</span><span class="tag-light">SQL Server</span><span class="tag-light">Redis</span><span class="tag-light">Docker</span><span class="tag-light">React</span></div></article>
-          <article class="card reveal"><div class="meta"><span class="kind">Systems programming</span></div><h3>Custom FTP Client, Server &amp; Protocol</h3><p>Built a custom FTP client-server application and protocol implementation, exploring network communication, socket programming, and persistent data management.</p><div class="tags"><span class="tag-light">Java</span><span class="tag-light">TCP Sockets</span><span class="tag-light">Networking</span><span class="tag-light">SQL</span></div></article>
-          <article class="card reveal"><div class="meta"><span class="kind">Machine learning · Audio</span></div><h3>Speech Emotion Recognition</h3><p>Designed an audio emotion classification pipeline using signal feature engineering and ML, including MFCC and spectral representations, dimensionality reduction, and data augmentation.</p><div class="tags"><span class="tag-light">Python</span><span class="tag-light">MFCC</span><span class="tag-light">Feature Engineering</span><span class="tag-light">PCA</span></div><p><a class="text-link" href="documents/SignalsSystems_Project1404_2__1___Emotion_Detection_.pdf" target="_blank" rel="noopener noreferrer">View documentation ↗</a></p></article>
-          <article class="card reveal"><div class="meta"><span class="kind">Signal processing · EEG</span></div><h3>EEG Analysis for Alzheimer’s Biomarker Research</h3><p>Analyzed EEG signals for olfactory-stimulation-related biomarker exploration, including preprocessing and phase-amplitude coupling analysis.</p><div class="tags"><span class="tag-light">EEG</span><span class="tag-light">Signal Processing</span><span class="tag-light">Filtering</span><span class="tag-light">Feature Analysis</span></div><p><a class="text-link" href="documents/SS_Project_Phase1_Latex.pdf" target="_blank" rel="noopener noreferrer">Phase I ↗</a> · <a class="text-link" href="documents/SignalsSystems_Project1404_2__1_-3.pdf" target="_blank" rel="noopener noreferrer">Phase II ↗</a></p></article>
-          <article class="card reveal"><div class="meta"><span class="kind">Automation · APIs</span></div><h3>Workflow Automation &amp; API Integrations</h3><p>Developed Python-based automation and API-connected utilities, including workflow automation and a Telegram bot integrating service data.</p><div class="tags"><span class="tag-light">Python</span><span class="tag-light">FastAPI</span><span class="tag-light">REST APIs</span><span class="tag-light">Automation</span></div></article>
-          <article class="card reveal"><div class="meta"><span class="kind">Digital design</span></div><h3>Computer Architecture &amp; HDL Projects</h3><p>Implemented academic hardware projects involving MIPS, Intel 8085, PWM, pseudorandom number generation, and Verilog digital logic.</p><div class="tags"><span class="tag-light">Verilog</span><span class="tag-light">MIPS</span><span class="tag-light">Intel 8085</span><span class="tag-light">Digital Design</span></div></article>
+    <section class="section wrap" id="experience">
+      <div class="section-head">
+        <div><div class="eyebrow">Professional background</div><h2>Experience</h2></div>
+        <p class="section-note">Applied engineering across enterprise software, backend systems, and intelligent document workflows.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="meta"><span class="kind">System Software Engineer</span><span>May 2026 — Present</span></div>
+          <h3>System Group</h3>
+          <p>Developing and extending enterprise ERP products and integrated business applications.</p>
+          <ul class="bullets">
+            <li>Develop and extend features and modules in the Rahkaran ERP ecosystem.</li>
+            <li>Led the design and most backend implementation of a B2B Customers Club integrated with Rahkaran.</li>
+            <li>Build service, database, and integration layers focused on data consistency and dependable workflows.</li>
+            <li>Integrate AI/ML capabilities into business-facing software.</li>
+          </ul>
+          <div class="tags"><span class="tag">C# / .NET</span><span class="tag">ERP Integration</span><span class="tag">Python</span><span class="tag">SQL Server</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="kind">AI/ML Engineer · Internship</span><span>Mar 2026 — Jun 2026</span></div>
+          <h3>Saafaa</h3>
+          <p>Contributed to an automated legal-document question-answering system built on retrieval-augmented generation.</p>
+          <ul class="bullets">
+            <li>Worked on document ingestion and parsing workflows using Docling.</li>
+            <li>Built retrieval workflows with Qdrant, hybrid search, metadata filtering, and reranking.</li>
+            <li>Explored graph analysis and convex optimization within the document intelligence pipeline.</li>
+            <li>Integrated components through a microservice architecture.</li>
+          </ul>
+          <div class="tags"><span class="tag">RAG</span><span class="tag">Docling</span><span class="tag">Qdrant</span><span class="tag">Microservices</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="kind">Academic Tutor</span><span>Jul 2025 — Oct 2025</span></div>
+          <h3>Institute of Artificial Intelligence and Social Advanced Technologies</h3>
+          <p>Tutored C++ Fundamentals, Data Structures, and the Computer Networks Laboratory.</p>
+          <div class="tags"><span class="tag">C++</span><span class="tag">Data Structures</span><span class="tag">Networks</span><span class="tag">Teaching</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="kind">Teaching Assistant</span><span>Sharif University of Technology</span></div>
+          <h3>Object-Oriented Programming</h3>
+          <p>Supported course delivery and student learning in object-oriented programming.</p>
+          <div class="tags"><span class="tag">OOP</span><span class="tag">C++ / Java</span><span class="tag">Academic Support</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="research">
+      <div class="section-head">
+        <div><div class="eyebrow">Research &amp; publications</div><h2>Research</h2></div>
+        <p class="section-note">Optimization-driven methods for intelligent systems, service composition, and computational efficiency.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="meta"><span class="kind">AITSDE</span><span>Sep 2026</span></div>
+          <h3>Service Composition for Complex Structures Based on Quality-of-Service Parameters Using Prim's and Kruskal's Algorithms</h3>
+          <p>Studies QoS-aware web service composition using adapted graph algorithms, geographical distance, and feasibility probabilities to improve selection and response-time performance.</p>
+          <div class="tags"><span class="tag">QoS Optimization</span><span class="tag">Graph Algorithms</span><span class="tag">Prim</span><span class="tag">Kruskal</span></div>
+        </article>
+        <article class="card">
+          <div class="meta"><span class="kind">AITSDE</span><span>Feb 2026</span></div>
+          <h3>Economic Optimization of Cryptocurrency Mining Using Hybrid HHO-RL</h3>
+          <p>Explores reinforcement learning with Harris Hawks Optimization for automated hyperparameter tuning and optimization of mining throughput, resource allocation, and hash-power distribution.</p>
+          <div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">HHO</span><span class="tag">Optimization</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="education">
+      <div class="section-head"><div><div class="eyebrow">Academic foundation</div><h2>Education</h2></div></div>
+      <article class="card education">
+        <div class="edu-icon">EE</div>
+        <div>
+          <div class="meta"><span class="kind">B.Sc. · Electrical Engineering</span><span>2023 — Present</span></div>
+          <h3>Sharif University of Technology</h3>
+          <p>Coursework includes Machine Learning, Data Structures &amp; Algorithms, Parallel Architectures &amp; Programming, Graph Signal Processing, OOP, Computer Networks, Computer Architecture, Microprocessor Systems, and Logic Design.</p>
+          <div class="tags"><span class="tag">Machine Learning</span><span class="tag">Optimization</span><span class="tag">Signal Processing</span><span class="tag">Computer Systems</span></div>
         </div>
+      </article>
+    </section>
+
+    <section class="section wrap" id="skills">
+      <div class="section-head">
+        <div><div class="eyebrow">Technical toolkit</div><h2>Skills</h2></div>
+        <p class="section-note">Technologies used across applied ML, backend development, and systems engineering.</p>
+      </div>
+      <div class="skills">
+        <article class="card"><h3>AI / Machine Learning</h3><p>RAG · Document Intelligence · Retrieval &amp; Reranking · Embeddings · Hybrid Search · Docling · Qdrant · Graph Analysis · Convex Optimization · Signal Processing · PyTorch · TensorFlow · scikit-learn</p></article>
+        <article class="card"><h3>Software &amp; Systems</h3><p>Python · Rust · C# / .NET · Java · C / C++ · FastAPI · REST APIs · Microservices · TCP/IP · Socket Programming · Multithreading · Linux</p></article>
+        <article class="card"><h3>Data &amp; Engineering</h3><p>SQL Server · Redis · Docker · CI/CD · Git · React · TypeScript · NumPy · Pandas · MATLAB · LaTeX · Database Integration</p></article>
       </div>
     </section>
 
-    <section id="research">
-      <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">Research &amp; publications</div><h2>Research</h2></div><p class="section-note">Optimization-driven methods for intelligent systems, service composition, and computational efficiency.</p></div>
-        <div class="grid">
-          <article class="card reveal"><div class="meta"><span class="kind">AITSDE</span><span>Sep 2026</span></div><h3>Service Composition for Complex Structures Based on Quality-of-Service Parameters Using Prim's and Kruskal's Algorithms</h3><p>Studies QoS-aware web service composition using adapted graph algorithms, geographical distance, and feasibility probabilities to improve selection and response-time performance.</p><div class="tags"><span class="tag-light">QoS Optimization</span><span class="tag-light">Graph Algorithms</span><span class="tag-light">Prim</span><span class="tag-light">Kruskal</span></div></article>
-          <article class="card reveal"><div class="meta"><span class="kind">AITSDE</span><span>Feb 2026</span></div><h3>Economic Optimization of Cryptocurrency Mining Using Hybrid HHO-RL</h3><p>Explores reinforcement learning with Harris Hawks Optimization for automated hyperparameter tuning and optimization of mining throughput, resource allocation, and hash-power distribution.</p><div class="tags"><span class="tag-light">Reinforcement Learning</span><span class="tag-light">HHO</span><span class="tag-light">Optimization</span><span class="tag-light">Resource Allocation</span></div></article>
+    <section class="section wrap" id="contact">
+      <div class="contact">
+        <div>
+          <div class="eyebrow">Find me around the web</div>
+          <h2>Let's build something useful.</h2>
+          <p>Interested in thoughtful engineering, open-source collaboration, and challenging problems across software systems and AI. Feel free to reach out about opportunities, projects, or ideas.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">Academic foundation</div><h2>Education</h2></div></div>
-        <article class="card edu reveal"><div class="edu-mark">EE</div><div><div class="meta"><span class="kind">B.Sc. · Electrical Engineering</span><span>2023 — Present</span></div><h3>Sharif University of Technology</h3><p>Current GPA: 16.8/20. Coursework includes Machine Learning, Data Structures &amp; Algorithms, Parallel Architectures &amp; Programming, Graph Signal Processing, OOP, Computer Networks, Computer Architecture, Microprocessor Systems, and Logic Design.</p><div class="tags"><span class="tag-light">Machine Learning</span><span class="tag-light">Optimization</span><span class="tag-light">Signal Processing</span><span class="tag-light">Computer Systems</span></div></div></article>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">Technical toolkit</div><h2>Skills</h2></div><p class="section-note">Technologies used across applied ML, backend development, and systems engineering.</p></div>
-        <div class="skills">
-          <article class="card reveal"><h3>AI / Machine Learning</h3><p>RAG · Document Intelligence · Retrieval &amp; Reranking · Embeddings · Hybrid Search · Docling · Qdrant · Graph Analysis · Convex Optimization · Signal Processing · PyTorch · TensorFlow · scikit-learn</p></article>
-          <article class="card reveal"><h3>Software &amp; Systems</h3><p>Python · Rust · C# / .NET · Java · C / C++ · FastAPI · REST APIs · Microservices · TCP/IP · Socket Programming · Multithreading · Linux</p></article>
-          <article class="card reveal"><h3>Data &amp; Engineering</h3><p>SQL Server · Redis · Docker · CI/CD · Git · React · TypeScript · NumPy · Pandas · MATLAB · LaTeX · Database Integration</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap reveal">
-        <div class="contact">
-          <div><div class="eyebrow">Let’s connect</div><h2>Have a good problem<br>to solve?</h2><p>I'm interested in thoughtful engineering, open-source collaboration, and challenging problems across software systems and AI. Whether you want to hire, collaborate, or contribute to SharifNet, I'd be glad to hear from you.</p></div>
-          <div class="contact-links"><a href="mailto:mirjalilyamirreza@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/AmirMJ-Z" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        <div class="contact-links">
+          <a href="mailto:mirjalilyamirreza@gmail.com">Email ↗</a>
+          <a href="https://www.linkedin.com/in/amirreza-mirjalily-9b004a220/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/AmirMJ-Z" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://quera.org/" target="_blank" rel="noopener noreferrer">Quera ↗</a>
         </div>
       </div>
     </section>
@@ -396,53 +327,20 @@
   <footer>
     <div class="wrap foot">
       <span>© 2026 Amirreza Mirjalily</span>
-      <span><a href="https://github.com/AmirMJ-Z/SharifNet" target="_blank" rel="noopener noreferrer">SharifNet on GitHub</a> · <a href="#top">Back to top ↑</a></span>
+      <span><a href="https://github.com/AmirMJ-Z" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="#top">Back to top ↑</a></span>
     </div>
   </footer>
-
   <script>
-    const menuButton = document.querySelector('.menu-toggle');
+    const menuButton = document.querySelector('.menu');
     const nav = document.querySelector('.navlinks');
     menuButton.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(isOpen));
+      const open = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
     });
     nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
       nav.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
     }));
-
-    // Copy install commands
-    const copyBtn = document.getElementById('copy-btn');
-    copyBtn.addEventListener('click', async () => {
-      const text = "sudo apt install ./sharifnet_*.deb\nsharifnet status\nsharifnet connect\nsharifnet autoreconnect on";
-      try { await navigator.clipboard.writeText(text); copyBtn.textContent = 'Copied ✓'; }
-      catch (e) { copyBtn.textContent = 'Copy failed'; }
-      setTimeout(() => copyBtn.textContent = 'Copy commands', 1800);
-    });
-
-    // Active nav link on scroll
-    const links = [...nav.querySelectorAll('a[href^="#"]:not(.nav-cta)')];
-    const targets = links.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
-    if ('IntersectionObserver' in window) {
-      const spy = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
-        }
-      }), {rootMargin: '-40% 0px -55% 0px'});
-      targets.forEach(t => spy.observe(t));
-    }
-
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      }), {threshold: .1});
-      reveals.forEach(el => observer.observe(el));
-    } else {
-      reveals.forEach(el => el.classList.add('visible'));
-    }
   </script>
 </body>
 </html>
